@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Lichess info</title>
+
+    {# Favicon #}
+{#    <link rel="shortcut icon" href="../static/favicon.ico">#}
+</head>
+<body>
+<h1> Lichess info </h1>
+
+
+{% block content %}
+{% endblock %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+
+</body>
+</html>

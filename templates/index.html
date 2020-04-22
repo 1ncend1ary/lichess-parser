@@ -1,0 +1,41 @@
+{% extends "template.html" %}
+{% block content %}
+
+    <form action="/check" method="POST">
+        <div>
+            <label>
+                Enter tournament id:
+                <input type="text" name="tid" placeholder="">
+            </label>
+        </div>
+
+        <div>
+            <label for="games">
+                Enter positive minimum number of games (usually 8):
+                <input type="number" name="games" placeholder="">
+            </label>
+        </div>
+        <div>
+            <label>
+                Enter minimum number of two-side moves (usually 10):
+                <input type="number" name="moves" placeholder="">
+            </label>
+        </div>
+        <div>
+            <label>
+                Enter name for new column for this tournament in the spreadsheet:
+                <input type="text" name="title" placeholder="">
+            </label>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if nicknames %}
+        {% for nick in nicknames %}
+            <p>{{ nick }}</p>
+        {% endfor %}
+        <p> Done.</p>
+    {% endif %}
+
+{% endblock %}

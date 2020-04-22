@@ -1,0 +1,18 @@
+{% extends "template.html" %}
+
+{% block content %}
+    {% if session['logged_in'] %}
+        You are logged in!
+    {% else %}
+        <p> Enter your login info </p>
+        <form action="/login" method="POST">
+            <label>
+                <input type="text" name="username" placeholder="Username">
+            </label>
+            <label>
+                <input type="password" name="password" placeholder="Password">
+            </label>
+            <input type="submit" value="Log in">
+        </form>
+    {% endif %}
+{% endblock %}
